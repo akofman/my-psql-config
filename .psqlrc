@@ -1,19 +1,31 @@
-\set QUIET 1
+-- don't print out informational messages
+\set QUIET 1 
 
 \setenv PSQL_EDITOR "/usr/bin/vim"
 \setenv PSQL_PAGER "pspg"
 
-\pset linestyle unicode
+-- unicode box-drawing characters
+\pset linestyle unicode 
 \pset border 2
 
-\set PROMPT1 '%M:%> %n@%/%R%#%x '
-\pset null '(null)'
+-- hostname:port username@database transaction-status
+\set PROMPT1 '%M:%> %n@%/%R%#%x ' 
+\set PROMPT2 '> ' 
+
+-- print (null) instead of nothing
+\pset null '(null)' 
+
+-- autocomplete keywords in upper case
 \set COMP_KEYWORD_CASE upper
 
-\timing
-\set HISTFILE ~/.psql_history_ :HOST _ :DBNAME
+-- show query execution time
+\timing 
+
+-- save history in separate files per host and database
+\set HISTFILE ~/.psql_history_ :HOST _ :DBNAME 
 \set HISTCONTROL ignoredups
 
 \unset QUIET
 
-\ir .psqlrc-aliases
+-- load aliases
+\ir .psqlrc-aliases 
