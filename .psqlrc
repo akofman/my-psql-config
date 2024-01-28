@@ -1,0 +1,19 @@
+\set QUIET 1
+
+\setenv PSQL_EDITOR "/usr/bin/vim"
+\setenv PSQL_PAGER "pspg"
+
+\pset linestyle unicode
+\pset border 2
+
+\set PROMPT1 '%M:%> %n@%/%R%#%x '
+\pset null '(null)'
+\set COMP_KEYWORD_CASE upper
+
+\timing
+\set HISTFILE ~/.psql_history_ :HOST _ :DBNAME
+\set HISTCONTROL ignoredups
+
+\unset QUIET
+
+\ir .psqlrc-aliases

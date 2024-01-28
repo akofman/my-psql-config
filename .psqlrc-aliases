@@ -1,0 +1,22 @@
+\echo
+\echo '\t:aliases\t\t-- show all aliases'
+\echo '\t:waits\t\t\t-- Waiting queries'
+\echo '\t:dbsize\t\t\t-- Database size'
+\echo '\t:tablesize\t\t-- Tables size'
+\echo '\t:walsize\t\t-- Total WAL size'
+\echo '\t:slotsize\t\t-- Slots size'
+\echo '\t:indexanalyse\t\t-- Slots size'
+\echo '\t:clear\t\t\t-- Clear the terminal screen'
+\echo '\t:ll\t\t\t-- List the contents of the current directory'
+\echo '\t\\h\t\t\t-- Help with SQL commands'
+\echo '\t\\?\t\t\t-- Help with psql commands'
+
+\set aliases        '\\i ~/.psqlrc-aliases'
+\set waits          `cat ~/aliases/waits.sql`
+\set dbsize         `cat ~/aliases/db_size.sql`
+\set tablesize      `cat ~/aliases/table_size.sql`
+\set walsize        `cat ~/aliases/wal_size.sql`
+\set slotsize       `cat ~/aliases/slot_size.sql`
+\set indexanalyse   `cat ~/aliases/index_analyse.sql`
+\set clear          '\\! clear;'
+\set ll             '\\! ls -lrt;'
